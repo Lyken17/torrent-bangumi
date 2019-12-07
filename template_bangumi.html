@@ -82,7 +82,12 @@
     <section class="jumbotron text-center">
     <div class="container">
         <h1 class="jumbotron-heading">Kimetsu no Yaiba - Episode [{{ curr.episode }}]</h1>
-        <p class="lead text-muted">This is a trial to seed bangumi torrents on web.</p>
+        <p class="lead text-muted">
+          This is a trial to seed bangumi torrents on web.
+          <br>
+          Please keep seeding (leave the browser open) for a while after you watched the video, so others can also enjoy it.
+        </p>
+        
         <!-- <p>
         <a href="#" class="btn btn-primary">Main call to action</a>
         <a href="#" class="btn btn-secondary">Secondary action</a>
@@ -113,7 +118,9 @@
         <div>
           <code id="downloaded"></code>
           of <code id="total"></code>
-          — <span id="remaining"></span><br/>
+          — <span id="remaining"></span>
+          If not working, try <a href="https://instant.io/#{{ curr.magnetlink }}{{ extra_trackers }}">InstantIO</a> or download via <a href="https://webtorrent.io">Webtorrent</a>. 
+          <br/>
           &#x2198;<code id="downloadSpeed">0 b/s</code>
           / &#x2197;<code id="uploadSpeed">0 b/s</code>
         </div>
@@ -166,7 +173,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <script>
-      var torrentId = '{{ curr.magnetlink }}'
+      var torrentId = '{{ curr.magnetlink }}{{ extra_trackers }}'
 
       var client = new WebTorrent()
 
