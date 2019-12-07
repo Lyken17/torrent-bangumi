@@ -39,7 +39,7 @@ def generate_bangumi(curr_data, prev_data=None, next_data=None, extra_trackers=e
 
 def generate_index(bangumi):
 	env = Environment(
-		loader=FileSystemLoader( os.path.dirname(os.path.abspath(__file__)) ),
+		loader=FileSystemLoader(os.path.dirname(os.path.abspath(__file__)) ),
 		trim_blocks=True )
 	template = env.get_template('template_index.html')
 
