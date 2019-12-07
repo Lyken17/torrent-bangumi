@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title> Kimestu no Yaiba [15] </title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="album.css" rel="stylesheet">
+    <!-- Boostrap related -->
+    <style>
+      .bg-inverse {
+        background-color: #292b2c!important;
+      }  
+      .navbar-inverse .navbar-brand, .navbar-inverse .navbar-toggler {
+        color: #fff;
+      }  
+      a.custom-card, a.custom-card:hover {
+        color: inherit;
+      }
+    </style>
+    <!-- Webtorrent related -->
+    <style>
+        #output video {
+          width: 100%;
+        }
+        #progressBar {
+            height: 5px;
+            width: 0%;
+            background-color: #35b44f;
+            transition: width .4s ease-in-out;
+        }
+        body.is-seed .show-seed {
+            display: inline;
+        }
+        body.is-seed .show-leech {
+            display: none;
+        }
+        .show-seed {
+            display: none;
+        }
+        #status code {
+            font-size: 90%;
+            font-weight: 700;
+            margin-left: 3px;
+            margin-right: 3px;
+            border-bottom: 1px dashed rgba(255,255,255,0.3);
+        }
+  
+        .is-seed #hero {
+            background-color: #154820;
+            transition: .5s .5s background-color ease-in-out;
+        }
+        #hero {
+            margin: auto;
+            max-width: 1080px;
+            background-color: #2a3749;
+        }
+        #status {
+            color: #fff;
+            font-size: 17px;
+            padding: 5px;
+        }
+        a:link, a:visited {
+            color: #30a247;
+            text-decoration: none;
+        }
+      </style>
+  </head>
+
+  <body>
+    
+    
+    <div class="navbar navbar-inverse bg-inverse">
+      <div class="container d-flex justify-content-between">
+        <a href="index.html" class="navbar-brand">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+
+    <section class="jumbotron text-center">
+      <div class="container">
+        <h1 class="jumbotron-heading">Kimetsu no Yaiba (Webugmi Series)</h1>
+        <p class="lead text-muted">This is a trial to seed bangumi torrents on web.</p>
+        <!-- <p>
+          <a href="#" class="btn btn-primary">Main call to action</a>
+          <a href="#" class="btn btn-secondary">Secondary action</a>
+        </p> -->
+      </div>
+    </section>
+
+
+    <div id="hero">
+        <div id="output">
+          <div id="progressBar"></div>
+          <!-- The video player will be added here -->
+        </div>
+        <!-- Statistics -->
+        <div id="status">
+          <div>
+            <span class="show-leech">Downloading </span>
+            <span class="show-seed">Seeding </span>
+            <code>
+              <!-- Informative link to the torrent file -->
+              <a style="color:white">【悠哈璃羽字幕社】[鬼灭之刃_Kimetsu no Yaiba][15][x264 1080p][CHS] </a>
+              (<a id="torrentLink" href="https://bangumi.moe/torrent/5d42d471306f1a0007b806a3">Torrent</a> / 
+              <a id="torrentLink" href="magnet:?xt=urn:btih:5126290f05576ab7522b45fb804412a8657267a4&tr=https%3A%2F%2Ftr.bangumi.moe%3A9696%2Fannounce&tr=http%3A%2F%2Ftr.bangumi.moe%3A6969%2Fannounce&tr=udp%3A%2F%2Ftr.bangumi.moe%3A6969%2Fannounce&tr=http%3A%2F%2Fopen.acgtracker.com%3A1096%2Fannounce&tr=http%3A%2F%2F208.67.16.113%3A8000%2Fannounce&tr=udp%3A%2F%2F208.67.16.113%3A8000%2Fannounce&tr=http%3A%2F%2Ftracker.ktxp.com%3A6868%2Fannounce&tr=http%3A%2F%2Ftracker.ktxp.com%3A7070%2Fannounce&tr=http%3A%2F%2Ft2.popgo.org%3A7456%2Fannonce&tr=http%3A%2F%2Fbt.sc-ol.com%3A2710%2Fannounce&tr=http%3A%2F%2Fshare.camoe.cn%3A8080%2Fannounce&tr=http%3A%2F%2F61.154.116.205%3A8000%2Fannounce&tr=http%3A%2F%2Fbt.rghost.net%3A80%2Fannounce&tr=http%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce&tr=http%3A%2F%2Ftracker.publicbt.com%3A80%2Fannounce&tr=http%3A%2F%2Ftracker.prq.to%2Fannounce&tr=http%3A%2F%2Fopen.nyaatorrents.info%3A6544%2Fannounce&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.fastcast.nz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com">Magnetlink</a>)
+            </code>
+            <code>
+            </code>
+            <span class="show-leech"> from </span>
+            <span class="show-seed"> to </span>
+            <code id="numPeers">0 peers</code>.    
+          </div>
+          <div>
+            <code id="downloaded"></code>
+            of <code id="total"></code>
+            — <span id="remaining"></span><br/>
+            &#x2198;<code id="downloadSpeed">0 b/s</code>
+            / &#x2197;<code id="uploadSpeed">0 b/s</code>
+          </div>
+        </div>
+                  <a href="ep-14.html">
+          <button type="button" class="btn btn-secondary" style="width: 100%;">
+            Prev Episode:
+                【悠哈璃羽字幕社】[鬼灭之刃_Kimetsu no Yaiba][14][x264 1080p][CHS]
+          </button>
+          </a>
+                          <a href="ep-16.html">
+          <button type="button" class="btn btn-primary" style="width: 100%;" >
+            Next Episode: 
+                【悠哈璃羽字幕社】[鬼灭之刃_Kimetsu no Yaiba][16][x264 1080p][CHS]
+          </button>
+          </a>
+            </div>
+
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-right">
+          <a href="#">Back to top</a>
+        </p>
+        <p>
+          Seeding Powered by  <a href="https://webtorrent.io">Webtorrent</a>. Style adopted from  <a href="#">Album example</a> at Bootstrap &copy;.
+          Developed by <a href="http://github.io/lyken17">Lyken17</a>.
+          <br>
+          All resources are publised and shared by users. I do NOT own any copyrights.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="assets/js/vendor/holder.min.js"></script>
+    <script>
+      $(function () {
+        Holder.addTheme("thumb", { background: "#55595c", foreground: "#eceeef", text: "Thumbnail" });
+      });
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- Include the latest version of WebTorrent -->
+    <script src="https://cdn.jsdelivr.net/webtorrent/latest/webtorrent.min.js"></script>
+
+    <!-- Moment is used to show a human-readable remaining time -->
+    <script src="https://momentjs.com/downloads/moment.min.js"></script>
+    
+
+    <script>
+      var torrentId = 'magnet:?xt=urn:btih:1e2c76b028a48a615336c8e25b1d7d38cd0f4cb1&dn=%5BUHA-WINGS%5D%5BKimetsu+no+Yaiba%5D%5B19%5D%5Bx264+1080p%5D%5BCHS%5D.mp4&tr=http%3A%2F%2F104.238.198.186%3A8000%2Fannounce&tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&tr=http%3A%2F%2Fopen.acgtracker.com%3A1096%2Fannounce&tr=http%3A%2F%2Fopen.nyaatorrents.info%3A6544%2Fannounce&tr=http%3A%2F%2Fopentracker.acgnx.se%2Fannounce&tr=http%3A%2F%2Fshare.camoe.cn%3A8080%2Fannounce&tr=http%3A%2F%2Fsukebei.tracker.wf%3A8888%2Fannounce&tr=http%3A%2F%2Ft.acg.rip%3A6699%2Fannounce&tr=http%3A%2F%2Ft.nyaatracker.com%2Fannounce&tr=http%3A%2F%2Ft.nyaatracker.com%3A80%2Fannounce&tr=http%3A%2F%2Ft2.popgo.org%3A7456%2Fannonce&tr=http%3A%2F%2Ftr.bangumi.moe%3A6969%2Fannounce&tr=http%3A%2F%2Ftracker.acgnx.se%2Fannounce&tr=http%3A%2F%2Ftracker.kamigami.org%3A2710%2Fannounce&tr=http%3A%2F%2Ftracker.kisssub.org%3A2015%2Fannounce&tr=http%3A%2F%2Ftracker1.itzmx.com%3A8080%2Fannounce&tr=http%3A%2F%2Ftracker2.itzmx.com%3A6961%2Fannounce&tr=http%3A%2F%2Ftracker3.itzmx.com%3A6961%2Fannounce&tr=http%3A%2F%2Ftracker4.itzmx.com%3A2710%2Fannounce&tr=https%3A%2F%2Ftr.bangumi.moe%3A9696%2Fannounce&tr=udp%3A%2F%2Ft.nyaatracker.com%3A80%2Fannounce&tr=udp%3A%2F%2Ftr.bangumi.moe%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.kamigami.org%3A2710%2Fannounce&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.fastcast.nz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com'
+
+      var client = new WebTorrent()
+
+      // HTML elements
+      var $body = document.body
+      var $progressBar = document.querySelector('#progressBar')
+      var $numPeers = document.querySelector('#numPeers')
+      var $downloaded = document.querySelector('#downloaded')
+      var $total = document.querySelector('#total')
+      var $remaining = document.querySelector('#remaining')
+      var $uploadSpeed = document.querySelector('#uploadSpeed')
+      var $downloadSpeed = document.querySelector('#downloadSpeed')
+
+      // Download the torrent
+      client.add(torrentId, function (torrent) {
+
+        // Torrents can contain many files. Let's use the .mp4 file
+        var file = torrent.files.find(function (file) {
+          return file.name.endsWith('.mp4')
+        })
+
+        // Stream the file in the browser
+        file.appendTo('#output')
+
+        // Trigger statistics refresh
+        torrent.on('done', onDone)
+        setInterval(onProgress, 500)
+        onProgress()
+
+        // Statistics
+        function onProgress () {
+          // Peers
+          $numPeers.innerHTML = torrent.numPeers + (torrent.numPeers === 1 ? ' peer' : ' peers')
+
+          // Progress
+          var percent = Math.round(torrent.progress * 100 * 100) / 100
+          $progressBar.style.width = percent + '%'
+          $downloaded.innerHTML = prettyBytes(torrent.downloaded)
+          $total.innerHTML = prettyBytes(torrent.length)
+
+          // Remaining time
+          var remaining
+          if (torrent.done) {
+            remaining = 'Done.'
+          } else {
+            remaining = moment.duration(torrent.timeRemaining / 1000, 'seconds').humanize()
+            remaining = remaining[0].toUpperCase() + remaining.substring(1) + ' remaining.'
+          }
+          $remaining.innerHTML = remaining
+
+          // Speed rates
+          $downloadSpeed.innerHTML = prettyBytes(torrent.downloadSpeed) + '/s'
+          $uploadSpeed.innerHTML = prettyBytes(torrent.uploadSpeed) + '/s'
+        }
+        function onDone () {
+          $body.className += ' is-seed'
+          onProgress()
+        }
+      })
+
+      // Human readable bytes util
+      function prettyBytes(num) {
+        var exponent, unit, neg = num < 0, units = ['B', 'kB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']
+        if (neg) num = -num
+        if (num < 1) return (neg ? '-' : '') + num + ' B'
+        exponent = Math.min(Math.floor(Math.log(num) / Math.log(1000)), units.length - 1)
+        num = Number((num / Math.pow(1000, exponent)).toFixed(2))
+        unit = units[exponent]
+        return (neg ? '-' : '') + num + ' ' + unit
+      }
+    </script>
+  </body>
+</html>

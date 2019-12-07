@@ -35,6 +35,8 @@
           transition: .5s .5s background-color ease-in-out;
       }
       #hero {
+          margin: auto;
+          max-width: 1080px;
           background-color: #2a3749;
       }
       #status {
@@ -61,7 +63,7 @@
           <span class="show-seed">Seeding </span>
           <code>
             <!-- Informative link to the torrent file -->
-            <a id="torrentLink" href="https://webtorrent.io/torrents/sintel.torrent">sintel.torrent</a>
+            <a id="torrentLink" href="https://bangumi.moe/torrent/5d5a410c306f1a0007b9d4cd">【悠哈璃羽字幕社】[鬼灭之刃_Kimetsu no Yaiba][19][x264 1080p][CHS].torrent</a>
           </code>
           <span class="show-leech"> from </span>
           <span class="show-seed"> to </span>
@@ -75,15 +77,30 @@
           / &#x2197;<code id="uploadSpeed">0 b/s</code>
         </div>
       </div>
+      <button type="button" class="btn btn-secondary" style="width: 100%;">Prev Episode:
+          【悠哈璃羽字幕社】[鬼灭之刃_Kimetsu no Yaiba][18][x264 1080p][CHS].torrent
+       </button>
+      <button type="button" class="btn btn-primary" style="width: 100%;">Next Episode: 
+          【悠哈璃羽字幕社】[鬼灭之刃_Kimetsu no Yaiba][20][x264 1080p][CHS].torrent
+      </button>
     </div>
     <!-- Include the latest version of WebTorrent -->
     <script src="https://cdn.jsdelivr.net/webtorrent/latest/webtorrent.min.js"></script>
 
     <!-- Moment is used to show a human-readable remaining time -->
-    <script src="http://momentjs.com/downloads/moment.min.js"></script>
+    <script src="https://momentjs.com/downloads/moment.min.js"></script>
+    
+    <!-- Boostrap related CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- TODO: Fix the purple font for peers and download / upload rate.-->
+
+    <!-- Boostrap related JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <script>
-      var torrentId = 'https://webtorrent.io/torrents/sintel.torrent'
+      var torrentId = 'magnet:?xt=urn:btih:1e2c76b028a48a615336c8e25b1d7d38cd0f4cb1&dn=%5BUHA-WINGS%5D%5BKimetsu+no+Yaiba%5D%5B19%5D%5Bx264+1080p%5D%5BCHS%5D.mp4&tr=http%3A%2F%2F104.238.198.186%3A8000%2Fannounce&tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&tr=http%3A%2F%2Fopen.acgtracker.com%3A1096%2Fannounce&tr=http%3A%2F%2Fopen.nyaatorrents.info%3A6544%2Fannounce&tr=http%3A%2F%2Fopentracker.acgnx.se%2Fannounce&tr=http%3A%2F%2Fshare.camoe.cn%3A8080%2Fannounce&tr=http%3A%2F%2Fsukebei.tracker.wf%3A8888%2Fannounce&tr=http%3A%2F%2Ft.acg.rip%3A6699%2Fannounce&tr=http%3A%2F%2Ft.nyaatracker.com%2Fannounce&tr=http%3A%2F%2Ft.nyaatracker.com%3A80%2Fannounce&tr=http%3A%2F%2Ft2.popgo.org%3A7456%2Fannonce&tr=http%3A%2F%2Ftr.bangumi.moe%3A6969%2Fannounce&tr=http%3A%2F%2Ftracker.acgnx.se%2Fannounce&tr=http%3A%2F%2Ftracker.kamigami.org%3A2710%2Fannounce&tr=http%3A%2F%2Ftracker.kisssub.org%3A2015%2Fannounce&tr=http%3A%2F%2Ftracker1.itzmx.com%3A8080%2Fannounce&tr=http%3A%2F%2Ftracker2.itzmx.com%3A6961%2Fannounce&tr=http%3A%2F%2Ftracker3.itzmx.com%3A6961%2Fannounce&tr=http%3A%2F%2Ftracker4.itzmx.com%3A2710%2Fannounce&tr=https%3A%2F%2Ftr.bangumi.moe%3A9696%2Fannounce&tr=udp%3A%2F%2Ft.nyaatracker.com%3A80%2Fannounce&tr=udp%3A%2F%2Ftr.bangumi.moe%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.kamigami.org%3A2710%2Fannounce&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.fastcast.nz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com'
 
       var client = new WebTorrent()
 
