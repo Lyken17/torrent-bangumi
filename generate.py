@@ -2,7 +2,39 @@ import yaml
 from jinja2 import Environment, FileSystemLoader
 import os
 
-extra_trackers="&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.fastcast.nz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com&ws=https%3A%2F%2Fwebtorrent.io%2Ftorrents%2F&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.fastcast.nz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com"
+# popular trackers
+extra_trackers = '''
+tr=wss%3A%2F%2Ftracker.btorrent.xyz
+tr=wss%3A%2F%2Ftracker.fastcast.nz
+tr=wss%3A%2F%2Ftracker.btorrent.xyz
+tr=wss%3A%2F%2Ftracker.fastcast.nz
+'''
+
+# webtorrent hosted trackers
+extra_trackers += '''
+ws=https%3A%2F%2Fwebtorrent.io%2Ftorrents%2F
+tr=wss%3A%2F%2Ftracker.openwebtorrent.com
+'''
+
+# Lyken's self-hosted tracker as backup
+extra_trackers += '''
+tr=http%3A%2F%2Ftr.syu.life%3A8000%2Fannounce
+tr=udp%3A%2F%2Ftr.syu.life%3A8000
+tr=ws%3A%2F%2Ftr.syu.life%3A8000
+'''
+
+# Lyken's self-hosted tracker (China) as backup
+extra_trackers += '''
+tr=http%3A%2F%2Fcn.tr.syu.life%3A8080%2Fannounce
+tr=udp%3A%2F%2Fcn.tr.syu.life%3A8080
+tr=ws%3A%2F%2Fcn.tr.syu.life%3A8080
+'''
+
+extra_trackers = [_ for _ in extra_trackers.strip().split("\n") if len(_) > 2]
+
+extra_trackers = "&".join(extra_trackers)
+
+print(extra_trackers)
 
 def load_yaml( filename ):
 	with open( filename, 'rb' ) as f:
@@ -28,7 +60,7 @@ def generate_bangumi(curr_data, prev_data=None, next_data=None, extra_trackers=e
 			prev=prev_data, 
 			curr=curr_data, 
 			next=next_data, 
-			extra_trackers=extra_trackers,
+			extra_trackers="&" + extra_trackers,
 			bangumi=bangumi
 		)
 	
@@ -55,11 +87,11 @@ def generate_index(bangumi):
 data = load_yaml( "bangumi.yaml" )
 items = len(data)
 generate_index(data)
-for i in range(items):
-	prev_data = data[i-1] if i - 1 >= 0 else None
-	next_data = data[i+1] if i + 1 < items else None
-	curr_data = data[i]
-	generate_bangumi(curr_data, prev_data, next_data)
 
-
-
+with open("all_maglinks.txt", "w") as fp:
+	for i in range(items):
+		prev_data = data[i-1] if i - 1 >= 0 else None
+		next_data = data[i+1] if i + 1 < items else None
+		curr_data = data[i]
+		generate_bangumi(curr_data, prev_data, next_data)
+		fp.write(curr_data["magnetlink"] + "&" + extra_trackers + "\n")
