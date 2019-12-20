@@ -12,7 +12,6 @@ tr=wss%3A%2F%2Ftracker.fastcast.nz
 
 # webtorrent hosted trackers
 extra_trackers += '''
-ws=https%3A%2F%2Fwebtorrent.io%2Ftorrents%2F
 tr=wss%3A%2F%2Ftracker.openwebtorrent.com
 '''
 
