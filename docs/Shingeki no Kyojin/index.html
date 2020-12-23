@@ -63,21 +63,28 @@
   <div class="album text-muted">
     <div class="container">
       <div class="row">
-        {% for item in bangumi %}
-        <div class="col-sm-3 card">
-          {% if item.episode == 0%}
-          <img class="card-img-top" data-src="holder.js/280px280/thumb" alt="Card image cap" src="example.jpeg"
+                <div class="col-sm-3 card">
+                    <img class="card-img-top" data-src="holder.js/280px280/thumb" alt="Card image cap" src="pic.jpg"
             style="object-position: center; object-fit: none; height: 280px;">
-          {% else %}
-          <img class="card-img-top" data-src="holder.js/280px280/thumb" alt="Card image cap" src="pic.jpg"
-            style="object-position: center; object-fit: none; height: 280px;">
-          {% endif %}
-          <a href="ep-{{ item.episode }}.html" class="stretched-link">
-            <p class="card-text text-center">Episode {{ item.episode }}</p>
+                    <a href="ep-1.html" class="stretched-link">
+            <p class="card-text text-center">Episode 1</p>
           </a>
         </div>
-        {% endfor %}
-      </div>
+                <div class="col-sm-3 card">
+                    <img class="card-img-top" data-src="holder.js/280px280/thumb" alt="Card image cap" src="pic.jpg"
+            style="object-position: center; object-fit: none; height: 280px;">
+                    <a href="ep-2.html" class="stretched-link">
+            <p class="card-text text-center">Episode 2</p>
+          </a>
+        </div>
+                <div class="col-sm-3 card">
+                    <img class="card-img-top" data-src="holder.js/280px280/thumb" alt="Card image cap" src="pic.jpg"
+            style="object-position: center; object-fit: none; height: 280px;">
+                    <a href="ep-3.html" class="stretched-link">
+            <p class="card-text text-center">Episode 3</p>
+          </a>
+        </div>
+              </div>
     </div>
   </div>
 

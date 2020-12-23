@@ -1,11 +1,9 @@
 import yaml
 from jinja2 import Environment, FileSystemLoader
-import os
+import os, os.path as osp
 
 # popular trackers
 extra_trackers = '''
-tr=wss%3A%2F%2Ftracker.btorrent.xyz
-tr=wss%3A%2F%2Ftracker.fastcast.nz
 tr=wss%3A%2F%2Ftracker.btorrent.xyz
 tr=wss%3A%2F%2Ftracker.fastcast.nz
 '''
@@ -39,10 +37,10 @@ def load_yaml( filename ):
 	with open( filename, 'rb' ) as f:
 		return yaml.load( f, Loader=yaml.FullLoader)
 
-def generate_bangumi(curr_data, prev_data=None, next_data=None, extra_trackers=extra_trackers):
+def generate_bangumi(curr_data, prev_data=None, next_data=None, extra_trackers=extra_trackers, dirname="docs"):
 	env = Environment(
-		loader=FileSystemLoader( os.path.dirname(os.path.abspath(__file__)) ),
-		trim_blocks=True )
+		loader=FileSystemLoader(os.path.dirname(os.path.abspath(__file__))),trim_blocks=True
+	)
 	template = env.get_template('template_bangumi.html')
 	'''
 	data:
@@ -53,7 +51,7 @@ def generate_bangumi(curr_data, prev_data=None, next_data=None, extra_trackers=e
 	# prev_id, curr_id, next_id = ("ep-%d.html" % (index + i) for i in (-1, 0, 1))
 	curr_id = curr_data["episode"]
 	bangumi = {
-		"name" : "Kimestu no Yaiba",
+		"name" : "Shingeki no Kyojin",
 	}
 	htmlpage = template.render(
 			prev=prev_data, 
@@ -63,12 +61,13 @@ def generate_bangumi(curr_data, prev_data=None, next_data=None, extra_trackers=e
 			bangumi=bangumi
 		)
 	
-	filename = "docs/ep-%s.html" % curr_id
+	# filename = "docs/ep-%s.html" % curr_id
+	filename = osp.join(dirname, "ep-%s.html" % curr_id)
 	with open(filename, 'w') as f:
 		f.write(htmlpage)
 		print("Successfuly generate_bangumi %s" % filename)
 
-def generate_index(bangumi):
+def generate_index(bangumi, dirname="docs"):
 	env = Environment(
 		loader=FileSystemLoader(os.path.dirname(os.path.abspath(__file__)) ),
 		trim_blocks=True )
@@ -78,19 +77,22 @@ def generate_index(bangumi):
 			bangumi=bangumi
 		)
 	
-	filename = "docs/index.html"
+	# filename = "docs/index.html"
+	filename = osp.join(dirname, "index.html")
 	with open(filename, 'w') as f:
 		f.write(htmlpage)
 		print("Successfuly generate_index %s" % filename)
 	
-data = load_yaml( "bangumi.yaml" )
+data = load_yaml( "bangumi/shingeki.yaml" )
 items = len(data)
-generate_index(data)
+dirname = "docs/Shingeki no Kyojin"
+os.makedirs(dirname, exist_ok=True)
+generate_index(data, dirname=dirname)
 
 with open("all_maglinks.txt", "w") as fp:
 	for i in range(items):
 		prev_data = data[i-1] if i - 1 >= 0 else None
 		next_data = data[i+1] if i + 1 < items else None
 		curr_data = data[i]
-		generate_bangumi(curr_data, prev_data, next_data)
+		generate_bangumi(curr_data, prev_data, next_data, dirname=dirname)
 		fp.write(curr_data["magnetlink"] + "&" + extra_trackers + "\n")
