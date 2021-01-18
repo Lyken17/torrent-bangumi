@@ -82,8 +82,9 @@
           <img class="card-img-top" data-src="holder.js/280px280/thumb" alt="Card image cap" src="example.jpeg"
             style="object-position: center; object-fit: none; height: 280px;">
           {% else %}
-          <img class="card-img-top" data-src="holder.js/280px280/thumb" alt="Card image cap" src="pic.jpg"
-            style="object-position: center; object-fit: none; height: 280px;">
+          <img class="card-img-top" data-src="holder.js/280px280/thumb" alt="Card image cap" src="thumbnail/{{ item.episode }}.png"
+            style="object-position: center; object-fit: none; height: 280px;" onerror="this.src='pic.jpg'"
+            >
           {% endif %}
           <a href="ep-{{ item.episode }}.html" class="stretched-link">
             <p class="card-text text-center">Episode {{ item.episode }}</p>
