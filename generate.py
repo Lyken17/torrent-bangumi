@@ -99,8 +99,8 @@ def generate_index(bangumi, dirname="docs"):
 		f.write(htmlpage)
 		print("Successfuly generate_index %s" % filename)
 
-# bangumi = "Shingeki no Kyojin"	
-bangumi = "Kimetsu no Yaiba"	
+bangumi = "Shingeki no Kyojin"	
+# bangumi = "Kimetsu no Yaiba"	
 yinfo = load_yaml(f"bangumi/{bangumi}.yaml" )
 
 data = yinfo["tumi"]
